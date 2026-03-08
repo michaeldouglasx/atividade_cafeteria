@@ -36,19 +36,12 @@ public class Main {
                 switch (opcao) {
                     case 1:
 
-                        System.out.println("\n===== SISTEMA DE PEDIDOS - CAFETERIA =====");
-                        System.out.println("1 - Gerenciar Clientes");
-                        System.out.println("2 - Gerenciar Produtos");
-                        System.out.println("3 - Gerenciar Pedidos");
-                        System.out.println("4 - Gerenciar Itens do Pedido");
-                        System.out.println("0 - Sair");
-
-
                         System.out.print("Digite o ID do Cliente: ");
                         int idC = scanner.nextInt();
                         scanner.nextLine();
                         System.out.print("Nome do Cliente: ");
                         String nomeC = scanner.nextLine();
+                        System.out.println("Digite um número de telefone: ");
                         String telefoneC = scanner.nextLine();
                         listaClientes.add(new Cliente(idC, nomeC, telefoneC));
                         System.out.println("Cliente cadastrado!");
