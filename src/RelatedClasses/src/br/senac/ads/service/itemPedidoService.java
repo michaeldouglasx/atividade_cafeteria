@@ -65,5 +65,30 @@ public class ItemPedidoService {
 
     }
 
+    public double calcularTotalPedido(int idPedido, List<Produto> produtos) {
+
+        double total = 0;
+
+        for (ItemPedido i : itens) {
+
+            if (i.getIdPedido() == idPedido) {
+
+                for (Produto p : produtos) {
+
+                    if (p.getId() == i.getIdProduto()) {
+
+                        total += p.getPreco() * i.getQuantidade();
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        return total;
+    }
+
 
 }
