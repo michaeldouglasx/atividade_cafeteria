@@ -1,4 +1,4 @@
-package RelatedClasses.src.br.senac.ads;
+package br.senac.ads;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

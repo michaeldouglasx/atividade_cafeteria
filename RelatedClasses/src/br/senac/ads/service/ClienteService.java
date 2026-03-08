@@ -1,6 +1,6 @@
-package RelatedClasses.src.br.senac.ads.service;
+package br.senac.ads.service;
 
-import RelatedClasses.src.br.senac.ads.model.Cliente;
+import br.senac.ads.model.Cliente;
 
 import java.util.ArrayList;
 import java.util.List;

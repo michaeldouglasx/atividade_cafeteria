@@ -1,4 +1,4 @@
-package RelatedClasses.src.br.senac.ads.model;
+package br.senac.ads.model;
 
 public class Cliente {
 
