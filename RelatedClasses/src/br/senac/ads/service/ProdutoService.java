@@ -11,10 +11,22 @@ public class ProdutoService {
        if (produto.getNome().isEmpty()||produto.getNome()==null && produto.getPreco()<=0){
            System.out.println("requisitos não atendidos");
        }
-       else {produtos.add(produto);}
+       else {produtos.add(produto);
+       }
 
-
-
+    }
+    public List<Produto> listarProdutos(){
+       return produtos;
+    }
+    public void atualizarPreco(int id, double novoPreco){
+       for (Produto produto : produtos) {
+           if (produto.getId()==id && novoPreco >0) {
+               produto.setPreco(novoPreco);
+           }
+           else {
+               System.out.println("produto nao pode ser cadastrado, nao atende os requisitos");
+           }
+       }
     }
 }
 
