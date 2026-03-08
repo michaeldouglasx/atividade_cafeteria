@@ -53,5 +53,16 @@ public class GerenciadorPedido {
         return null;
     }
 
+    public void cancelarPedido(int id) {
 
+        Pedido pedido = buscarPedido(id);
+
+        if (pedido != null) {
+            pedidos.remove(pedido);
+            System.out.println("Pedido cancelado.");
+        } else {
+            System.out.println("Pedido não encontrado.");
+        }
+
+    }
 }
