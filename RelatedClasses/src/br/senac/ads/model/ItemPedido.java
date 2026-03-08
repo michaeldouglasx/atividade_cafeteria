@@ -7,7 +7,7 @@ public class ItemPedido {
     private int quantidade;
     private double precoUnitario;
 
-    public ItemPedido(int idPedido, Produto produto, int quantidade, double precoUnitario) {
+    public ItemPedido(int idPedido, Produto produto, int quantidade) {
         this.idPedido = idPedido;
         this.produto = produto;
         this.quantidade = quantidade;

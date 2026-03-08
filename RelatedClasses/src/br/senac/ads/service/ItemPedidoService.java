@@ -8,114 +8,61 @@ import java.util.List;
 
 public class ItemPedidoService {
 
-    List<ItemPedido> itens = new ArrayList<>();
+    private List<ItemPedido> itens = new ArrayList<>();
 
     public void adicionarItemPedido(int idPedido, int idProduto, int quantidade, List<Produto> produtos) {
-
         if (quantidade <= 0) {
             System.out.println("Quantidade inválida.");
             return;
         }
 
-        boolean produtoExiste = false;
-
+        Produto produtoEncontrado = null;
         for (Produto p : produtos) {
-
             if (p.getId() == idProduto) {
-                produtoExiste = true;
+                produtoEncontrado = p; // Salvamos o objeto encontrado
                 break;
             }
-
         }
 
-        if (!produtoExiste) {
-
+        if (produtoEncontrado == null) {
             System.out.println("Produto não encontrado.");
             return;
-
         }
 
-        ItemPedido item = new ItemPedido(idPedido, idProduto, quantidade);
 
+
+        ItemPedido item = new ItemPedido(idPedido, produtoEncontrado, quantidade);
         itens.add(item);
-
         System.out.println("Item adicionado ao pedido.");
     }
 
-    public void listarItensPedido(int idPedido) {
-
-        boolean encontrou = false;
-
-        for (ItemPedido i : itens) {
-
-            if (i.getIdPedido() == idPedido) {
-
-                System.out.println("Produto: " + i.getIdProduto());
-                System.out.println("Quantidade: " + i.getQuantidade());
-                System.out.println("--------------------");
-
-                encontrou = true;
-            }
-
-        }
-
-        if (!encontrou) {
-            System.out.println("Nenhum item encontrado para esse pedido.");
-        }
-
-    }
-
-    public double calcularTotalPedido(int idPedido, List<Produto> produtos) {
-
+    public double calcularTotalPedido(int idPedido) {
         double total = 0;
-
         for (ItemPedido i : itens) {
-
             if (i.getIdPedido() == idPedido) {
 
-                for (Produto p : produtos) {
-
-                    if (p.getId() == i.getIdProduto()) {
-
-                        total += p.getPreco() * i.getQuantidade();
-
-                    }
-
-                }
-
+                total += i.getProduto().getPreco() * i.getQuantidade();
             }
-
         }
-
         return total;
     }
 
     public void removerItemPedido(int idPedido, int idProduto) {
-
         ItemPedido itemRemover = null;
 
         for (ItemPedido i : itens) {
 
-            if (i.getIdPedido() == idPedido && i.getIdProduto() == idProduto) {
-
+            if (i.getIdPedido() == idPedido && i.getProduto().getId() == idProduto) {
                 itemRemover = i;
                 break;
-
             }
-
         }
 
         if (itemRemover != null) {
-
             itens.remove(itemRemover);
             System.out.println("Item removido.");
-
         } else {
-
             System.out.println("Item não encontrado.");
-
         }
-
     }
-
 }
