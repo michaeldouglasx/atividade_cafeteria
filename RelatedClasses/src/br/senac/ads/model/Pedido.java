@@ -56,7 +56,7 @@ public class Pedido {
 
     public void exibirPedido() {
         System.out.println("Pedido ID: " + id);
-        System.out.println("Cliente ID: " + cliente.getId());
+        System.out.println("Cliente ID: " + cliente.getID());
         System.out.println("Data: " + data);
     }
 }
