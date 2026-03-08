@@ -49,7 +49,6 @@ public class PedidoService {
         }
     }
 
-    // Método extra para ajudar você a testar
     public List<Pedido> listarTodos() {
         return this.pedidos;
     }
