@@ -90,6 +90,32 @@ public class ItemPedidoService {
         return total;
     }
 
+    public void removerItemPedido(int idPedido, int idProduto) {
 
+        ItemPedido itemRemover = null;
+
+        for (ItemPedido i : itens) {
+
+            if (i.getIdPedido() == idPedido && i.getIdProduto() == idProduto) {
+
+                itemRemover = i;
+                break;
+
+            }
+
+        }
+
+        if (itemRemover != null) {
+
+            itens.remove(itemRemover);
+            System.out.println("Item removido.");
+
+        } else {
+
+            System.out.println("Item não encontrado.");
+
+        }
+
+    }
 
 }
