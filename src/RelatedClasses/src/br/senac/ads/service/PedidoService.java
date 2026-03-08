@@ -1,8 +1,13 @@
+package RelatedClasses.src.br.senac.ads.service;
+
+import RelatedClasses.src.br.senac.ads.model.Cliente;
+import RelatedClasses.src.br.senac.ads.model.Pedido;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
 
-public class GerenciadorPedido {
+public class PedidoService {
 
     List<Pedido> pedidos = new ArrayList<>();
 
@@ -11,7 +16,7 @@ public class GerenciadorPedido {
         boolean clienteExiste = false;
 
         for (Cliente c : clientes) {
-            if (c.getId() == idCliente) {
+            if (c.getID() == idCliente) {
                 clienteExiste = true;
                 break;
             }
@@ -35,7 +40,7 @@ public class GerenciadorPedido {
 
         for (Pedido p : pedidos) {
             System.out.println("ID Pedido: " + p.getId());
-            System.out.println("Cliente: " + p.getIdCliente());
+            System.out.println("Cliente: " + p.getCliente());
             System.out.println("Data: " + p.getData());
             System.out.println("---");
         }
