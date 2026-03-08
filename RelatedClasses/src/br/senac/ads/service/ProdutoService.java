@@ -27,6 +27,19 @@ public class ProdutoService {
                System.out.println("produto nao pode ser cadastrado, nao atende os requisitos");
            }
        }
+
     }
+    public void removerProduto(int id){
+       for (Produto produto : produtos) {
+           if (produto.getId()==id) {
+               produtos.remove(produto);
+               System.out.println("Produto removido com sucesso");
+           }
+           else {
+               System.out.println("id invalido");
+           }
+       }
+    }
+
 }
 
