@@ -8,7 +8,7 @@ public class Pedido {
     private ItemPedido[] itens;
     private int quantidadeItens;
 
-    public Pedido(int id, Cliente cliente, String data) {
+    public Pedido(int id, int cliente, String data) {
         this.id = id;
         this.cliente = cliente;
         this.data = data;
